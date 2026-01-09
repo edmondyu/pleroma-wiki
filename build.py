@@ -33,11 +33,13 @@ def linkify(text: str, title_to_url: dict):
         safe = safe.replace(escape(k), f'<a href="{url}">{escape(k)}</a>')
     return safe
 
-def render_page(title, sidebar_html, body_html):
+def render_page(title, sidebar_html, categories_sidebar_html, body_html):
     html = TPL.replace("{{TITLE}}", escape(title))
     html = html.replace("{{SIDEBAR}}", sidebar_html)
+    html = html.replace("{{CATEGORIES_SIDEBAR}}", categories_sidebar_html)
     html = html.replace("{{CONTENT}}", body_html)
     return html
+
 
 def build():
     entries = json.loads(DATA.read_text(encoding="utf-8"))
