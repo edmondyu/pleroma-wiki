@@ -204,15 +204,13 @@ def build():
             for g in groups:
                 if grouped[g]:
                     parts.append(f"<h2>{escape(g)}</h2>")
-                    parts.append("<ul>" + "
-".join(
+                    parts.append("<ul>" + "\n".join(
                         f'<li><a href="{title_to_url[t]}">{escape(t)}</a></li>' for t in grouped[g]
                     ) + "</ul>")
 
             if others:
                 parts.append("<h2>其他人物</h2>")
-                parts.append("<ul>" + "
-".join(
+                parts.append("<ul>" + "\n".join(
                     f'<li><a href="{title_to_url[t]}">{escape(t)}</a></li>' for t in others
                 ) + "</ul>")
 
