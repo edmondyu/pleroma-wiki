@@ -1670,100 +1670,114 @@
     "categories": "代幣經濟"
   },
   {
-    "title": "Ishtar",
-    "aliases": [],
+    "title": "伊絲塔（Ishtar）",
+    "aliases": [
+      "伊絲塔",
+      "Ishtar"
+    ],
     "summary": "果真希 的專屬守護靈。",
     "content": [
       "果真希 的專屬守護靈"
     ],
     "see_also": [
       "果真希",
-      "守護靈 / 專屬精靈",
-      "半精靈"
+      "守護靈 / 專屬精靈"
     ],
     "categories": "精靈系統"
   },
   {
-    "title": "Eros",
-    "aliases": [],
+    "title": "厄洛斯（Eros）",
+    "aliases": [
+      "厄洛斯",
+      "Eros"
+    ],
     "summary": "花愛誠 的專屬守護靈。",
     "content": [
       "花愛誠 的專屬守護靈"
     ],
     "see_also": [
       "花愛誠",
-      "守護靈 / 專屬精靈",
-      "半精靈"
+      "守護靈 / 專屬精靈"
     ],
     "categories": "精靈系統"
   },
   {
-    "title": "Sophia",
-    "aliases": [],
+    "title": "蘇菲亞（Sophia）",
+    "aliases": [
+      "蘇菲亞",
+      "Sophia"
+    ],
     "summary": "桑敏智 的專屬守護靈。",
     "content": [
       "桑敏智 的專屬守護靈"
     ],
     "see_also": [
       "桑敏智",
-      "守護靈 / 專屬精靈",
-      "半精靈"
+      "守護靈 / 專屬精靈"
     ],
     "categories": "精靈系統"
   },
   {
-    "title": "Psyche",
-    "aliases": [],
+    "title": "賽琪（Psyche）",
+    "aliases": [
+      "賽琪",
+      "Psyche"
+    ],
     "summary": "雲碩美 的專屬守護靈。",
     "content": [
       "雲碩美 的專屬守護靈"
     ],
     "see_also": [
       "雲碩美",
-      "守護靈 / 專屬精靈",
-      "半精靈"
+      "守護靈 / 專屬精靈"
     ],
     "categories": "精靈系統"
   },
   {
-    "title": "Aphrodite",
-    "aliases": [],
+    "title": "愛芙羅黛蒂（Aphrodite）",
+    "aliases": [
+      "愛芙羅黛蒂",
+      "Aphrodite"
+    ],
     "summary": "伊澤愛 的專屬守護靈。",
     "content": [
       "伊澤愛 的專屬守護靈"
     ],
     "see_also": [
       "伊澤愛",
-      "守護靈 / 專屬精靈",
-      "半精靈"
+      "守護靈 / 專屬精靈"
     ],
     "categories": "精靈系統"
   },
   {
-    "title": "Isis",
-    "aliases": [],
+    "title": "伊西斯（Isis）",
+    "aliases": [
+      "伊西斯",
+      "Isis"
+    ],
     "summary": "香織善 的專屬守護靈。",
     "content": [
       "香織善 的專屬守護靈"
     ],
     "see_also": [
       "香織善",
-      "守護靈 / 專屬精靈",
-      "半精靈"
+      "守護靈 / 專屬精靈"
     ],
     "categories": "精靈系統"
   },
   {
-    "title": "Persephone",
-    "aliases": [],
+    "title": "波瑟芬妮（Persephone）",
+    "aliases": [
+      "波瑟芬妮",
+      "Persephone"
+    ],
     "summary": "海允恕 的專屬守護靈。",
     "content": [
       "海允恕 的專屬守護靈"
     ],
     "see_also": [
       "海允恕",
-      "守護靈 / 專屬精靈",
-      "半精靈"
+      "守護靈 / 專屬精靈"
     ],
     "categories": "精靈系統"
   }
