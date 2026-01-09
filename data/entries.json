@@ -14,9 +14,7 @@
       "佩洛瑪紀年",
       "佩洛瑪舞台"
     ],
-    "categories": [
-      "時間"
-    ]
+    "categories": "時間"
   },
   {
     "title": "人工精靈",
@@ -43,10 +41,7 @@
       "意識背景運算",
       "胡亞尼"
     ],
-    "categories": [
-      "精靈系統",
-      "科技"
-    ]
+    "categories": "精靈系統"
   },
   {
     "title": "光明四使",
@@ -70,10 +65,7 @@
       "世界共和國",
       "Apeiron 阿派朗"
     ],
-    "categories": [
-      "精靈系統",
-      "團體"
-    ]
+    "categories": "團體"
   },
   {
     "title": "半精靈",
@@ -93,10 +85,7 @@
       "守護靈 / 專屬精靈",
       "國真幾"
     ],
-    "categories": [
-      "精靈系統",
-      "科技"
-    ]
+    "categories": "精靈系統"
   },
   {
     "title": "人工精靈網絡系統",
@@ -131,10 +120,7 @@
       "光明四使",
       "世界共和國"
     ],
-    "categories": [
-      "精靈系統",
-      "科技"
-    ]
+    "categories": "精靈系統"
   },
   {
     "title": "精靈網絡",
@@ -154,10 +140,7 @@
       "精靈暗網",
       "世界共和國"
     ],
-    "categories": [
-      "精靈系統",
-      "科技"
-    ]
+    "categories": "精靈系統"
   },
   {
     "title": "精靈暗網",
@@ -179,10 +162,7 @@
       "人工精靈網絡系統",
       "Autogenesis"
     ],
-    "categories": [
-      "精靈系統",
-      "科技"
-    ]
+    "categories": "精靈系統"
   },
   {
     "title": "守護靈 / 專屬精靈",
@@ -206,10 +186,7 @@
       "果真希",
       "花愛誠"
     ],
-    "categories": [
-      "精靈系統",
-      "科技"
-    ]
+    "categories": "精靈系統"
   },
   {
     "title": "心 / 靈魂 / 意識",
@@ -232,9 +209,7 @@
       "雙子靈魂 Dual-spirit",
       "靈魂擬態"
     ],
-    "categories": [
-      "概念"
-    ]
+    "categories": "概念"
   },
   {
     "title": "心能 / 心智力",
@@ -256,10 +231,7 @@
       "魔法使（魔法使用者）Enchanter",
       "零智嚴"
     ],
-    "categories": [
-      "概念",
-      "能力與技術"
-    ]
+    "categories": "概念"
   },
   {
     "title": "靈魂工程學",
@@ -287,10 +259,7 @@
       "零智嚴",
       "郎三才"
     ],
-    "categories": [
-      "科技",
-      "概念"
-    ]
+    "categories": "科技"
   },
   {
     "title": "Apeiron 阿派朗",
@@ -311,11 +280,7 @@
       "胡亞尼",
       "光明四使"
     ],
-    "categories": [
-      "概念",
-      "精靈系統",
-      "組織與勢力"
-    ]
+    "categories": "組織與勢力"
   },
   {
     "title": "Autogenesis",
@@ -334,10 +299,7 @@
       "精靈暗網",
       "胡亞尼"
     ],
-    "categories": [
-      "概念",
-      "精靈系統"
-    ]
+    "categories": "精靈系統"
   },
   {
     "title": "圓形研究所",
@@ -361,10 +323,7 @@
       "果真希",
       "花愛誠"
     ],
-    "categories": [
-      "地點",
-      "組織與勢力"
-    ]
+    "categories": "地點"
   },
   {
     "title": "心熵症候群（心能寂滅）",
@@ -389,10 +348,7 @@
       "雙子靈魂 Dual-spirit",
       "零智嚴"
     ],
-    "categories": [
-      "病症",
-      "概念"
-    ]
+    "categories": "概念"
   },
   {
     "title": "無限心 The infinite mind",
@@ -409,9 +365,7 @@
       "佩洛瑪舞台",
       "Apeiron 阿派朗"
     ],
-    "categories": [
-      "概念"
-    ]
+    "categories": "概念"
   },
   {
     "title": "讀心",
@@ -437,9 +391,7 @@
       "郎三才",
       "心 / 靈魂 / 意識"
     ],
-    "categories": [
-      "能力與技術"
-    ]
+    "categories": "能力與技術"
   },
   {
     "title": "Ghost Writing",
@@ -456,9 +408,7 @@
       "胡亞尼",
       "靈魂工程學"
     ],
-    "categories": [
-      "能力與技術"
-    ]
+    "categories": "能力與技術"
   },
   {
     "title": "雙子靈魂 Dual-spirit",
@@ -482,10 +432,7 @@
       "果真希",
       "桑敏智"
     ],
-    "categories": [
-      "能力與技術",
-      "概念"
-    ]
+    "categories": "概念"
   },
   {
     "title": "靈魂擬態",
@@ -505,10 +452,7 @@
       "心 / 靈魂 / 意識",
       "心能 / 心智力"
     ],
-    "categories": [
-      "能力與技術",
-      "概念"
-    ]
+    "categories": "概念"
   },
   {
     "title": "鏈技術與契約",
@@ -531,11 +475,7 @@
       "世界共和國 The World Republic",
       "人工精靈網絡系統"
     ],
-    "categories": [
-      "科技",
-      "代幣經濟",
-      "制度與舞台"
-    ]
+    "categories": "代幣經濟"
   },
   {
     "title": "佩洛瑪舞台",
@@ -559,9 +499,7 @@
       "心熵症候群（心能寂滅）",
       "零智嚴"
     ],
-    "categories": [
-      "制度與舞台"
-    ]
+    "categories": "制度與舞台"
   },
   {
     "title": "佩洛瑪舞台賽制",
@@ -593,9 +531,7 @@
       "Proof of Love",
       "偶像"
     ],
-    "categories": [
-      "制度與舞台"
-    ]
+    "categories": "制度與舞台"
   },
   {
     "title": "標準競賽場館",
@@ -614,10 +550,7 @@
       "佩洛瑪之心虛擬機 The Pleroma Virtual Machine",
       "LoveCoin"
     ],
-    "categories": [
-      "制度與舞台",
-      "地點"
-    ]
+    "categories": "地點"
   },
   {
     "title": "地下舞台 / 暗台",
@@ -637,10 +570,7 @@
       "LoveCoin",
       "偶像"
     ],
-    "categories": [
-      "制度與舞台",
-      "事件"
-    ]
+    "categories": "事件"
   },
   {
     "title": "佩洛瑪紀年",
@@ -661,10 +591,7 @@
       "參照點：故事開始時間",
       "佩洛瑪舞台"
     ],
-    "categories": [
-      "時間",
-      "制度與舞台"
-    ]
+    "categories": "時間"
   },
   {
     "title": "佩洛瑪之心 The Heart of Pleroma / 世界之靈 Anima Mundi",
@@ -686,10 +613,7 @@
       "LoveCoin",
       "心熵症候群（心能寂滅）"
     ],
-    "categories": [
-      "概念",
-      "制度與舞台"
-    ]
+    "categories": "概念"
   },
   {
     "title": "佩洛瑪之心虛擬機 The Pleroma Virtual Machine",
@@ -707,10 +631,7 @@
       "佩洛瑪之心 The Heart of Pleroma / 世界之靈 Anima Mundi",
       "Proof of Love"
     ],
-    "categories": [
-      "制度與舞台",
-      "科技"
-    ]
+    "categories": "科技"
   },
   {
     "title": "LoveCoin",
@@ -734,10 +655,7 @@
       "Proof of Love",
       "神人王 / 神人后"
     ],
-    "categories": [
-      "代幣經濟",
-      "制度與舞台"
-    ]
+    "categories": "代幣經濟"
   },
   {
     "title": "偶像幣 Idol Coin",
@@ -762,10 +680,7 @@
       "鏈技術與契約",
       "精靈網絡"
     ],
-    "categories": [
-      "代幣經濟",
-      "制度與舞台"
-    ]
+    "categories": "代幣經濟"
   },
   {
     "title": "Proof of Love",
@@ -784,10 +699,7 @@
       "LoveCoin",
       "偶像"
     ],
-    "categories": [
-      "制度與舞台",
-      "能力與技術"
-    ]
+    "categories": "制度與舞台"
   },
   {
     "title": "偶像",
@@ -812,10 +724,7 @@
       "Virgo",
       "Virtus"
     ],
-    "categories": [
-      "職業與角色",
-      "制度與舞台"
-    ]
+    "categories": "職業與角色"
   },
   {
     "title": "神人王 / 神人后",
@@ -841,10 +750,7 @@
       "奉獻舞台",
       "偶像"
     ],
-    "categories": [
-      "職業與角色",
-      "制度與舞台"
-    ]
+    "categories": "職業與角色"
   },
   {
     "title": "魔法使（魔法使用者）Enchanter",
@@ -867,10 +773,7 @@
       "靈魂工程學",
       "佩洛瑪舞台"
     ],
-    "categories": [
-      "職業與角色",
-      "能力與技術"
-    ]
+    "categories": "職業與角色"
   },
   {
     "title": "繫靈魔法 Soul-binding Chant",
@@ -893,9 +796,7 @@
       "果真希",
       "花愛誠"
     ],
-    "categories": [
-      "能力與技術"
-    ]
+    "categories": "能力與技術"
   },
   {
     "title": "魔術師 Magician",
@@ -912,9 +813,7 @@
       "佩洛瑪舞台",
       "煉金術師 Alchemist"
     ],
-    "categories": [
-      "職業與角色"
-    ]
+    "categories": "職業與角色"
   },
   {
     "title": "傀儡師 Puppeteer",
@@ -931,9 +830,7 @@
       "佩洛瑪舞台",
       "煉金術師 Alchemist"
     ],
-    "categories": [
-      "職業與角色"
-    ]
+    "categories": "職業與角色"
   },
   {
     "title": "馴服師 Tamer",
@@ -950,9 +847,7 @@
       "繫靈魔法 Soul-binding Chant",
       "煉金術師 Alchemist"
     ],
-    "categories": [
-      "職業與角色"
-    ]
+    "categories": "職業與角色"
   },
   {
     "title": "煉金術師 Alchemist",
@@ -970,9 +865,7 @@
       "馴服師 Tamer",
       "佩洛瑪舞台"
     ],
-    "categories": [
-      "職業與角色"
-    ]
+    "categories": "職業與角色"
   },
   {
     "title": "Virgo",
@@ -997,10 +890,7 @@
       "郎三才",
       "佩洛瑪舞台"
     ],
-    "categories": [
-      "團體",
-      "組織與勢力"
-    ]
+    "categories": "團體"
   },
   {
     "title": "Virtus",
@@ -1018,10 +908,7 @@
       "胡亞默",
       "佩洛瑪舞台"
     ],
-    "categories": [
-      "團體",
-      "組織與勢力"
-    ]
+    "categories": "團體"
   },
   {
     "title": "哈帝斯娛樂企業 Hades Entertainment",
@@ -1040,9 +927,7 @@
       "胡亞默",
       "地下舞台 / 暗台"
     ],
-    "categories": [
-      "組織與勢力"
-    ]
+    "categories": "組織與勢力"
   },
   {
     "title": "V Label",
@@ -1059,9 +944,7 @@
       "真知子",
       "郎三才"
     ],
-    "categories": [
-      "組織與勢力"
-    ]
+    "categories": "組織與勢力"
   },
   {
     "title": "Triple True",
@@ -1080,9 +963,7 @@
       "真知子",
       "V Label"
     ],
-    "categories": [
-      "團體"
-    ]
+    "categories": "團體"
   },
   {
     "title": "Nemesis",
@@ -1098,9 +979,7 @@
       "香織善",
       "地下舞台 / 暗台"
     ],
-    "categories": [
-      "團體"
-    ]
+    "categories": "團體"
   },
   {
     "title": "伊安娜神殿 Inana Temple",
@@ -1121,10 +1000,7 @@
       "心熵症候群（心能寂滅）",
       "伊澤愛"
     ],
-    "categories": [
-      "宗教與教派",
-      "組織與勢力"
-    ]
+    "categories": "組織與勢力"
   },
   {
     "title": "Allogenes",
@@ -1145,10 +1021,7 @@
       "五封印 The Five Seals",
       "伊澤愛"
     ],
-    "categories": [
-      "宗教與教派",
-      "職業與角色"
-    ]
+    "categories": "宗教與教派"
   },
   {
     "title": "五封印 The Five Seals",
@@ -1168,11 +1041,7 @@
       "心能 / 心智力",
       "魔法使（魔法使用者）Enchanter"
     ],
-    "categories": [
-      "宗教與教派",
-      "團體",
-      "能力與技術"
-    ]
+    "categories": "團體"
   },
   {
     "title": "世界共和國 The World Republic",
@@ -1208,10 +1077,7 @@
       "偶像幣 Idol Coin",
       "不可抗力號 Force Majeure"
     ],
-    "categories": [
-      "組織與勢力",
-      "制度與舞台"
-    ]
+    "categories": "組織與勢力"
   },
   {
     "title": "不可抗力號 Force Majeure",
@@ -1231,10 +1097,7 @@
       "心能 / 心智力",
       "靈魂工程學"
     ],
-    "categories": [
-      "組織與勢力",
-      "地點"
-    ]
+    "categories": "地點"
   },
   {
     "title": "十六國聯邦（諸侯盟）",
@@ -1253,9 +1116,7 @@
       "佩洛瑪舞台",
       "少年黨事件"
     ],
-    "categories": [
-      "組織與勢力"
-    ]
+    "categories": "組織與勢力"
   },
   {
     "title": "少年黨事件",
@@ -1276,9 +1137,7 @@
       "胡亞尼",
       "牟兩儀（於零智嚴條目中）"
     ],
-    "categories": [
-      "事件"
-    ]
+    "categories": "事件"
   },
   {
     "title": "胡亞尼",
@@ -1316,11 +1175,7 @@
       "Virtus",
       "國真幾"
     ],
-    "categories": [
-      "人物",
-      "精靈系統",
-      "能力與技術"
-    ]
+    "categories": "人物"
   },
   {
     "title": "胡亞默",
@@ -1340,10 +1195,7 @@
       "Virtus",
       "人工精靈"
     ],
-    "categories": [
-      "人物",
-      "精靈系統"
-    ]
+    "categories": "人物"
   },
   {
     "title": "零智嚴",
@@ -1375,11 +1227,7 @@
       "佩洛瑪舞台",
       "心熵症候群（心能寂滅）"
     ],
-    "categories": [
-      "人物",
-      "科技",
-      "概念"
-    ]
+    "categories": "人物"
   },
   {
     "title": "郎三才",
@@ -1410,11 +1258,7 @@
       "雙子靈魂 Dual-spirit",
       "佩洛瑪舞台"
     ],
-    "categories": [
-      "人物",
-      "科技",
-      "能力與技術"
-    ]
+    "categories": "人物"
   },
   {
     "title": "真知子",
@@ -1438,11 +1282,7 @@
       "郎三才",
       "佩洛瑪舞台"
     ],
-    "categories": [
-      "人物",
-      "團體",
-      "組織與勢力"
-    ]
+    "categories": "人物"
   },
   {
     "title": "果真希",
@@ -1474,11 +1314,7 @@
       "佩洛瑪舞台",
       "國真幾"
     ],
-    "categories": [
-      "人物",
-      "團體",
-      "職業與角色"
-    ]
+    "categories": "人物"
   },
   {
     "title": "花愛誠",
@@ -1509,11 +1345,7 @@
       "佩洛瑪舞台",
       "果真希"
     ],
-    "categories": [
-      "人物",
-      "團體",
-      "職業與角色"
-    ]
+    "categories": "人物"
   },
   {
     "title": "國真幾",
@@ -1540,11 +1372,7 @@
       "維城",
       "精靈網絡"
     ],
-    "categories": [
-      "人物",
-      "職業與角色",
-      "精靈系統"
-    ]
+    "categories": "人物"
   },
   {
     "title": "桑敏智",
@@ -1576,11 +1404,7 @@
       "偶像幣 Idol Coin",
       "果真希"
     ],
-    "categories": [
-      "人物",
-      "團體",
-      "職業與角色"
-    ]
+    "categories": "人物"
   },
   {
     "title": "雲碩美",
@@ -1611,11 +1435,7 @@
       "偶像幣 Idol Coin",
       "花愛誠"
     ],
-    "categories": [
-      "人物",
-      "團體",
-      "職業與角色"
-    ]
+    "categories": "人物"
   },
   {
     "title": "伊澤愛",
@@ -1646,11 +1466,7 @@
       "雙子靈魂 Dual-spirit",
       "守護靈 / 專屬精靈"
     ],
-    "categories": [
-      "人物",
-      "團體",
-      "職業與角色"
-    ]
+    "categories": "人物"
   },
   {
     "title": "香織善",
@@ -1681,11 +1497,7 @@
       "繫靈魔法 Soul-binding Chant",
       "偶像幣 Idol Coin"
     ],
-    "categories": [
-      "人物",
-      "團體",
-      "職業與角色"
-    ]
+    "categories": "人物"
   },
   {
     "title": "海允恕",
@@ -1714,11 +1526,7 @@
       "繫靈魔法 Soul-binding Chant",
       "偶像幣 Idol Coin"
     ],
-    "categories": [
-      "人物",
-      "團體",
-      "職業與角色"
-    ]
+    "categories": "人物"
   },
   {
     "title": "心所",
@@ -1741,10 +1549,7 @@
       "Virgo",
       "Virtus"
     ],
-    "categories": [
-      "地點",
-      "組織與勢力"
-    ]
+    "categories": "地點"
   },
   {
     "title": "維城",
@@ -1764,8 +1569,6 @@
       "十六國聯邦（諸侯盟）",
       "國真幾"
     ],
-    "categories": [
-      "地點"
-    ]
+    "categories": "地點"
   }
 ]
