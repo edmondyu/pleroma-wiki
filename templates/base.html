@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>{{TITLE}}</title>
+  <link rel="stylesheet" href="/style.css" />
+  <script defer src="/app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><a href="/">佩洛瑪百科</a></div>
+    <input id="searchBox" class="search" placeholder="搜尋詞條…" />
+    <div id="searchResults" class="search-results"></div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <h3>目錄</h3>
+      {{SIDEBAR}}
+      <hr />
+      <div class="muted">Static Wiki • Netlify</div>
+    </aside>
+
+    <main class="content">
+      <article class="article">
+        {{CONTENT}}
+      </article>
+      <footer class="footer muted">
+        內容整理自世界觀設定（更新版）
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
