@@ -164,22 +164,78 @@ def build():
         out_dir = cat_root / slugify(c)
         ensure_dir(out_dir)
 
-        items = []
-        for t in cat_to_titles[c]:
-            items.append(f'<li><a href="{title_to_url[t]}">{escape(t)}</a></li>')
+        # Special formatting for 人物：先列出偶像團體成員並按團體分組
+        if c == "人物":
+            def is_group_member(text: str, group: str) -> bool:
+                # 盡量避免把「經理人/負責」等角色誤判為成員
+                # 需要同時出現團體名與「成員」字樣（相距不遠）
+                return re.search(rf"{group}.{{0,12}}成員|{group}.{{0,12}}團成員|{group}.{{0,12}}女團成員|{group}.{{0,12}}男團成員", text) is not None
 
-        body = (
-            f"<h1>分類：{escape(c)}</h1>"
-            f"<p class='muted'>共 {len(cat_to_titles[c])} 條</p>"
-            "<h2>詞條</h2>"
-            "<ul>" + "\n".join(items) + "</ul>"
-        )
+            # 建立 title -> entry text 快取
+            title_to_text = {}
+            for e in entries:
+                if e.get("title") in cat_to_titles[c]:
+                    title_to_text[e["title"]] = " ".join([e.get("summary","")] + (e.get("content") or []))
+
+            groups = ["Virgo", "Virtus"]
+            grouped = {g: [] for g in groups}
+            others = []
+
+            for t in cat_to_titles[c]:
+                txt = title_to_text.get(t, "")
+                placed = False
+                for g in groups:
+                    if is_group_member(txt, g):
+                        grouped[g].append(t)
+                        placed = True
+                        break
+                if not placed:
+                    others.append(t)
+
+            # sort within groups
+            for g in groups:
+                grouped[g] = sorted(grouped[g])
+            others = sorted(others)
+
+            parts = [f"<h1>分類：{escape(c)}</h1>",
+                     f"<p class='muted'>共 {len(cat_to_titles[c])} 條</p>"]
+
+            # group sections
+            for g in groups:
+                if grouped[g]:
+                    parts.append(f"<h2>{escape(g)}</h2>")
+                    parts.append("<ul>" + "
+".join(
+                        f'<li><a href="{title_to_url[t]}">{escape(t)}</a></li>' for t in grouped[g]
+                    ) + "</ul>")
+
+            if others:
+                parts.append("<h2>其他人物</h2>")
+                parts.append("<ul>" + "
+".join(
+                    f'<li><a href="{title_to_url[t]}">{escape(t)}</a></li>' for t in others
+                ) + "</ul>")
+
+            body = "
+".join(parts)
+
+        else:
+            items = []
+            for t in cat_to_titles[c]:
+                items.append(f'<li><a href="{title_to_url[t]}">{escape(t)}</a></li>')
+
+            body = (
+                f"<h1>分類：{escape(c)}</h1>"
+                f"<p class='muted'>共 {len(cat_to_titles[c])} 條</p>"
+                "<h2>詞條</h2>"
+                "<ul>" + "
+".join(items) + "</ul>"
+            )
 
         (out_dir / "index.html").write_text(
             render_page(f"分類：{c}", sidebar_html, categories_sidebar_html, body),
             encoding="utf-8"
         )
-
     # 首頁
     home_list = []
     entries_sorted = sorted(entries, key=lambda x: x["title"])
