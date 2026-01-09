@@ -214,8 +214,7 @@ def build():
                     f'<li><a href="{title_to_url[t]}">{escape(t)}</a></li>' for t in others
                 ) + "</ul>")
 
-            body = "
-".join(parts)
+            body = "".join(parts)
 
         else:
             items = []
@@ -226,8 +225,7 @@ def build():
                 f"<h1>分類：{escape(c)}</h1>"
                 f"<p class='muted'>共 {len(cat_to_titles[c])} 條</p>"
                 "<h2>詞條</h2>"
-                "<ul>" + "
-".join(items) + "</ul>"
+                "<ul>" + "".join(items) + "</ul>"
             )
 
         (out_dir / "index.html").write_text(
