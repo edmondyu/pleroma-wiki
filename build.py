@@ -20,24 +20,20 @@ def ensure_dir(p: Path):
     p.mkdir(parents=True, exist_ok=True)
 
 def linkify(text: str, title_to_url: dict):
-    # 依 title 長度由長到短，避免短詞先吃掉
     keys = sorted(title_to_url.keys(), key=len, reverse=True)
     if not keys:
         return escape(text)
 
     safe = escape(text)
-
-    # 避免在已經有 <a ...> 的地方重複替換（這裡文本本來無 HTML，ok）
     for k in keys:
         url = title_to_url[k]
-        # 只替換「純文字中出現的詞」，簡單做法：直接 replace
         safe = safe.replace(escape(k), f'<a href="{url}">{escape(k)}</a>')
     return safe
 
 def render_page(title, sidebar_html, categories_sidebar_html, body_html):
     html = TPL.replace("{{TITLE}}", escape(title))
+    # 兼容兩種模板：若模板只有 {{SIDEBAR}}，我們也會把分類塞到 sidebar_html
     html = html.replace("{{SIDEBAR}}", sidebar_html)
-    # base.html 若尚未加入 {{CATEGORIES_SIDEBAR}}，這行不會造成問題（replace 不到就原樣）
     html = html.replace("{{CATEGORIES_SIDEBAR}}", categories_sidebar_html)
     html = html.replace("{{CONTENT}}", body_html)
     return html
@@ -45,30 +41,21 @@ def render_page(title, sidebar_html, categories_sidebar_html, body_html):
 def build():
     entries = json.loads(DATA.read_text(encoding="utf-8"))
 
-    # 建 url map
+    # URL map
     title_to_slug = {e["title"]: slugify(e["title"]) for e in entries}
     title_to_url = {t: f"/pages/{s}/" for t, s in title_to_slug.items()}
 
-    # sidebar：依字母/中文排序
-    entries_sorted = sorted(entries, key=lambda x: x["title"])
-    sidebar_items = []
-    for e in entries_sorted:
-        sidebar_items.append(
-            f'<div class="side-item"><a href="{title_to_url[e["title"]]}">{escape(e["title"])}</a></div>'
-        )
-    sidebar_html = "\n".join(sidebar_items)
-
     # --- Categories ---
-    # 每個 entry 可選填 categories: ["概念", "人物", ...]
-    # 沒填的自動歸入「未分類」
+    # categories 欄位：允許字串（單一分類）或陣列（多分類）
     cat_to_titles = defaultdict(list)
     for e in entries:
-        cats = e.get("categories") or ["未分類"]
-        # 支援 categories 填成字串（不小心寫錯也能跑）
+        cats = e.get("categories") or "未分類"
         if isinstance(cats, str):
             cats = [cats]
+        cats = [str(c).strip() for c in cats if c and str(c).strip()]
+        if not cats:
+            cats = ["未分類"]
         for c in cats:
-            c = (c or "").strip() or "未分類"
             cat_to_titles[c].append(e["title"])
 
     categories_sorted = sorted(cat_to_titles.keys())
@@ -83,12 +70,16 @@ def build():
         for c in categories_sorted
     )
 
+    # Sidebar：只顯示分類
+    # 若你的模板只使用 {{SIDEBAR}}，也能顯示分類；若用 {{CATEGORIES_SIDEBAR}}，則 {{SIDEBAR}} 會是空的
+    sidebar_html = ""
+
     # 清 dist
     if DIST.exists():
         shutil.rmtree(DIST)
     ensure_dir(DIST)
 
-    # 複製 static 到 dist 根目錄
+    # copy static
     for f in STATIC.glob("*"):
         shutil.copy2(f, DIST / f.name)
 
@@ -108,15 +99,15 @@ def build():
         encoding="utf-8"
     )
 
-    # 產生每個詞條頁
+    # 詞條頁
     for e in entries:
         slug = title_to_slug[e["title"]]
         out_dir = DIST / "pages" / slug
         ensure_dir(out_dir)
 
-        # 內容組裝
         h1 = f"<h1>{escape(e['title'])}</h1>"
         summary = f"<p class='muted'>{escape(e.get('summary',''))}</p>" if e.get("summary") else ""
+
         alias = ""
         if e.get("aliases"):
             alias = "<p><strong>別名：</strong> " + ", ".join(escape(a) for a in e["aliases"]) + "</p>"
@@ -136,35 +127,32 @@ def build():
                     links.append(escape(t))
             see = "<h2>參見</h2><p>" + " · ".join(links) + "</p>"
 
-        # 分類區塊（Wikipedia 風格）
-        cats = e.get("categories") or ["未分類"]
-        if isinstance(cats, str):
-            cats = [cats]
-        cat_links = []
-        for c in cats:
-            c = (c or "").strip() or "未分類"
-            cat_links.append(f'<a href="{cat_to_url.get(c, "/categories/")}">{escape(c)}</a>')
-        cat_block = "<h2>分類</h2><p>" + " · ".join(cat_links) + "</p>"
+        # 單一分類顯示（你已要求每條只屬於一個分類）
+        cat = e.get("categories") or "未分類"
+        if isinstance(cat, list):
+            cat = cat[0] if cat else "未分類"
+        cat = str(cat).strip() or "未分類"
+        cat_link = f'<a href="{cat_to_url.get(cat, "/categories/")}">{escape(cat)}</a>'
+        cat_block = "<h2>分類</h2><p>" + cat_link + "</p>"
 
         body = "\n".join([h1, summary, alias, "<h2>內容</h2>", content_html, see, cat_block])
         page = render_page(e["title"], sidebar_html, categories_sidebar_html, body)
-
         (out_dir / "index.html").write_text(page, encoding="utf-8")
 
-    # --- Build category pages ---
+    # 分類頁
     cat_root = DIST / "categories"
     ensure_dir(cat_root)
 
-    # categories index page
     cat_list_items = []
     for c in categories_sorted:
         cat_list_items.append(
             f'<li><a href="{cat_to_url[c]}">{escape(c)}</a> — '
             f'<span class="muted">{len(cat_to_titles[c])} 條</span></li>'
         )
+
     cat_index_body = (
         "<h1>分類</h1>"
-        "<p class='muted'>按分類瀏覽詞條（Wikipedia 風格）。</p>"
+        "<p class='muted'>按分類瀏覽詞條。</p>"
         "<ul>" + "\n".join(cat_list_items) + "</ul>"
     )
     (cat_root / "index.html").write_text(
@@ -172,7 +160,6 @@ def build():
         encoding="utf-8"
     )
 
-    # each category page
     for c in categories_sorted:
         out_dir = cat_root / slugify(c)
         ensure_dir(out_dir)
@@ -193,12 +180,14 @@ def build():
             encoding="utf-8"
         )
 
-    # 首頁 index：列出全部詞條 + 分類入口
+    # 首頁
     home_list = []
+    entries_sorted = sorted(entries, key=lambda x: x["title"])
     for e in entries_sorted:
         home_list.append(
             f'<li><a href="{title_to_url[e["title"]]}">{escape(e["title"])}</a> — {escape(e.get("summary",""))}</li>'
         )
+
     home_body = (
         "<h1>佩洛瑪百科</h1>"
         "<p class='muted'>Wikipedia 風格的世界觀資料庫（靜態站點，可部署至 Netlify）</p>"
@@ -206,6 +195,7 @@ def build():
         "<h2>詞條列表</h2>"
         "<ul>" + "\n".join(home_list) + "</ul>"
     )
+
     (DIST / "index.html").write_text(
         render_page("佩洛瑪百科", sidebar_html, categories_sidebar_html, home_body),
         encoding="utf-8"
