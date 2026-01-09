@@ -570,7 +570,7 @@
       "LoveCoin",
       "偶像"
     ],
-    "categories": "事件"
+    "categories": "制度與舞台"
   },
   {
     "title": "佩洛瑪紀年",
@@ -1570,5 +1570,103 @@
       "國真幾"
     ],
     "categories": "地點"
+  },
+  {
+    "title": "JH",
+    "aliases": [],
+    "summary": "果真希 的專屬代幣。",
+    "content": [
+      "果真希 的專屬代幣"
+    ],
+    "see_also": [
+      "果真希",
+      "偶像幣 Idol Coin",
+      "LoveCoin"
+    ],
+    "categories": "代幣經濟"
+  },
+  {
+    "title": "OS",
+    "aliases": [],
+    "summary": "花愛誠 的專屬代幣。",
+    "content": [
+      "花愛誠 的專屬代幣"
+    ],
+    "see_also": [
+      "花愛誠",
+      "偶像幣 Idol Coin",
+      "LoveCoin"
+    ],
+    "categories": "代幣經濟"
+  },
+  {
+    "title": "MJ",
+    "aliases": [],
+    "summary": "桑敏智 的專屬代幣。",
+    "content": [
+      "桑敏智 的專屬代幣"
+    ],
+    "see_also": [
+      "桑敏智",
+      "偶像幣 Idol Coin",
+      "LoveCoin"
+    ],
+    "categories": "代幣經濟"
+  },
+  {
+    "title": "SM",
+    "aliases": [],
+    "summary": "雲碩美 的專屬代幣。",
+    "content": [
+      "雲碩美 的專屬代幣"
+    ],
+    "see_also": [
+      "雲碩美",
+      "偶像幣 Idol Coin",
+      "LoveCoin"
+    ],
+    "categories": "代幣經濟"
+  },
+  {
+    "title": "CO",
+    "aliases": [],
+    "summary": "伊澤愛 的專屬代幣。",
+    "content": [
+      "伊澤愛 的專屬代幣"
+    ],
+    "see_also": [
+      "伊澤愛",
+      "偶像幣 Idol Coin",
+      "LoveCoin"
+    ],
+    "categories": "代幣經濟"
+  },
+  {
+    "title": "JS",
+    "aliases": [],
+    "summary": "香織善 的專屬代幣。",
+    "content": [
+      "香織善 的專屬代幣"
+    ],
+    "see_also": [
+      "香織善",
+      "偶像幣 Idol Coin",
+      "LoveCoin"
+    ],
+    "categories": "代幣經濟"
+  },
+  {
+    "title": "WS",
+    "aliases": [],
+    "summary": "海允恕 的專屬代幣。",
+    "content": [
+      "海允恕 的專屬代幣"
+    ],
+    "see_also": [
+      "海允恕",
+      "偶像幣 Idol Coin",
+      "LoveCoin"
+    ],
+    "categories": "代幣經濟"
   }
 ]
