@@ -120,8 +120,7 @@ def build():
                 paras.append(p)
             else:
                 paras.append(f"<p>{linkify(p, title_to_url)}</p>")
-        content_html = "
-".join(paras) if paras else "<p class='muted'>（此詞條尚待補完）</p>"
+        content_html = "\n".join(paras) if paras else "<p class='muted'>（此詞條尚待補完）</p>"
 
         see = ""
         if e.get("see_also"):
