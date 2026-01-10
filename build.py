@@ -74,12 +74,16 @@ def build():
     # Clean dist
     if DIST.exists():
         shutil.rmtree(DIST)
-    ensure_dir(DIST)
-
-    # Copy static
+    ensure_dir(DIST)    # copy static (recursive; supports subfolders like static/images/)
     if STATIC.exists():
-        for f in STATIC.glob("*"):
-            shutil.copy2(f, DIST / f.name)
+        for p in STATIC.rglob("*"):
+            rel = p.relative_to(STATIC)
+            dest = DIST / rel
+            if p.is_dir():
+                ensure_dir(dest)
+            else:
+                ensure_dir(dest.parent)
+                shutil.copy2(p, dest)
 
     # Search index
     search_index = []
@@ -112,12 +116,7 @@ def build():
 
         paras = []
         for p in e.get("content", []):
-            p = p.strip()
-            if p.startswith("<"):
-                # raw HTML block (e.g. infobox image)
-                paras.append(p)
-            else:
-                paras.append(f"<p>{linkify(p, title_to_url)}</p>")
+            paras.append(f"<p>{linkify(p, title_to_url)}</p>")
         content_html = "\n".join(paras) if paras else "<p class='muted'>（此詞條尚待補完）</p>"
 
         see = ""
