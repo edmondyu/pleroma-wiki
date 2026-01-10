@@ -22,20 +22,18 @@ def ensure_dir(p: Path):
 def linkify(text: str, title_to_url: dict):
     """Replace entry titles with hyperlinks in plain text.
 
-    This is done in a single pass to avoid nested <a> tags when one title is a
+    Single-pass implementation to avoid nested <a> tags when one title is a
     substring of another (e.g. 胡亞尼 vs 胡亞尼（作者）).
     """
     keys = sorted(title_to_url.keys(), key=len, reverse=True)
     if not keys:
         return escape(text)
 
-    # Build one regex that matches any title (longest-first via sorting).
     pattern = re.compile("|".join(re.escape(k) for k in keys))
 
     out = []
     last = 0
     for m in pattern.finditer(text):
-        # escape the text between matches
         out.append(escape(text[last:m.start()]))
         k = m.group(0)
         url = title_to_url.get(k)
@@ -75,7 +73,27 @@ def build():
         for c in cats:
             cat_to_titles[c].append(e["title"])
 
-    categories_sorted = sorted(cat_to_titles.keys())
+        # Custom category order (manual priority)
+    CATEGORY_ORDER = [
+        "創作背景",
+        "人物",
+        "團體",
+        "精靈系統",
+        "制度與舞台",
+        "代幣經濟",
+        "地點",
+        "宗教與教派",
+        "時間",
+        "概念",
+        "科技",
+        "組織與勢力",
+        "職業與角色",
+        "能力與技術",
+        "事件",
+    ]
+    order = {name: i for i, name in enumerate(CATEGORY_ORDER)}
+
+    categories_sorted = sorted(cat_to_titles.keys(), key=lambda c: (order.get(c, 999), c))
     for c in categories_sorted:
         cat_to_titles[c] = sorted(cat_to_titles[c])
 
@@ -94,11 +112,16 @@ def build():
     if DIST.exists():
         shutil.rmtree(DIST)
     ensure_dir(DIST)
-
-    # Copy static
+    # Copy static (recursive; supports subfolders like static/images/)
     if STATIC.exists():
-        for f in STATIC.glob("*"):
-            shutil.copy2(f, DIST / f.name)
+        for p in STATIC.rglob("*"):
+            rel = p.relative_to(STATIC)
+            dest = DIST / rel
+            if p.is_dir():
+                ensure_dir(dest)
+            else:
+                ensure_dir(dest.parent)
+                shutil.copy2(p, dest)
 
     # Search index
     search_index = []
@@ -131,7 +154,14 @@ def build():
 
         paras = []
         for p in e.get("content", []):
-            paras.append(f"<p>{linkify(p, title_to_url)}</p>")
+            p = (p or "").strip()
+            if not p:
+                continue
+            if p.startswith("<"):
+                # raw HTML block (e.g. infobox image)
+                paras.append(p)
+            else:
+                paras.append(f"<p>{linkify(p, title_to_url)}</p>")
         content_html = "\n".join(paras) if paras else "<p class='muted'>（此詞條尚待補完）</p>"
 
         see = ""
