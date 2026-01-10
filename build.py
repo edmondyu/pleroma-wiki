@@ -75,11 +75,16 @@ def build():
     if DIST.exists():
         shutil.rmtree(DIST)
     ensure_dir(DIST)
-
-    # Copy static
+    # Copy static (recursive; supports subfolders like static/images/)
     if STATIC.exists():
-        for f in STATIC.glob("*"):
-            shutil.copy2(f, DIST / f.name)
+        for p in STATIC.rglob("*"):
+            rel = p.relative_to(STATIC)
+            dest = DIST / rel
+            if p.is_dir():
+                ensure_dir(dest)
+            else:
+                ensure_dir(dest.parent)
+                shutil.copy2(p, dest)
 
     # Search index
     search_index = []
@@ -109,14 +114,14 @@ def build():
         alias = ""
         if e.get("aliases"):
             alias = "<p><strong>別名：</strong> " + ", ".join(escape(a) for a in e["aliases"]) + "</p>"
+
         paras = []
         for p in e.get("content", []):
             p = (p or "").strip()
             if not p:
                 continue
-            # If a paragraph starts with '<', treat it as raw HTML block and do NOT escape/linkify.
-            # This enables Wikipedia-like infobox images and other embedded blocks.
             if p.startswith("<"):
+                # raw HTML block (e.g. infobox image)
                 paras.append(p)
             else:
                 paras.append(f"<p>{linkify(p, title_to_url)}</p>")
