@@ -112,7 +112,12 @@ def build():
 
         paras = []
         for p in e.get("content", []):
-            paras.append(f"<p>{linkify(p, title_to_url)}</p>")
+            p = p.strip()
+            if p.startswith("<"):
+                # raw HTML block (e.g. infobox image)
+                paras.append(p)
+            else:
+                paras.append(f"<p>{linkify(p, title_to_url)}</p>")
         content_html = "\n".join(paras) if paras else "<p class='muted'>（此詞條尚待補完）</p>"
 
         see = ""
