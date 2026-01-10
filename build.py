@@ -287,11 +287,15 @@ def build():
         f'<li><a href="{title_to_url[e["title"]]}">{escape(e["title"])}</a> — {escape(e.get("summary",""))}</li>'
         for e in entries_sorted
     ]
+
     home_body = (
         "<h1>佩洛瑪舞台：百科</h1>"
-        "<p class='muted'>此網站內容全部源於《愛虛構 Fiction Passion》，請訂閱支持創作。</p>"
-        "<p><a href='https://fictionpassion.com/' target='_blank' rel='noopener'>https://fictionpassion.com/</a></p>"
-        "<p><img class='hero-image' src='/images/pleroma-wiki.jpg' alt='佩洛瑪舞台：百科 主題圖' /></p>"
+        "<p class='muted'>"
+        "此網站內容全部源於《"
+        "<a href='https://fictionpassion.com/' target='_blank' rel='noopener'>"
+        "愛虛構 Fiction Passion"
+        "</a>》，請訂閱支持創作。"
+        "</p>"
         "<p><a href='/categories/'>→ 瀏覽分類</a></p>"
         "<h2>詞條列表</h2>"
         "<ul>" + "\n".join(home_list) + "</ul>"
