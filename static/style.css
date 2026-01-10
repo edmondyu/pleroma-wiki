@@ -88,3 +88,32 @@ a { color: var(--link); }
 @media (max-width: 900px) {
   .layout { grid-template-columns: 1fr; }
 }
+/* Wikipedia-like right-floating profile picture (infobox image) */
+.infobox-image {
+  float: right;
+  width: 220px;
+  margin: 0 0 1em 1em;
+  text-align: center;
+  font-size: 0.85em;
+  color: var(--muted);
+}
+
+.infobox-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  display: block;
+}
+
+.infobox-caption {
+  margin-top: 0.3em;
+}
+
+/* On small screens, avoid cramped text wrap */
+@media (max-width: 900px) {
+  .infobox-image {
+    float: none;
+    width: min(320px, 100%);
+    margin: 0 auto 1em;
+  }
+}
