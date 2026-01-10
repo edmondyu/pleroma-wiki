@@ -74,16 +74,12 @@ def build():
     # Clean dist
     if DIST.exists():
         shutil.rmtree(DIST)
-    ensure_dir(DIST)    # copy static (recursive; supports subfolders like static/images/)
+    ensure_dir(DIST)
+
+    # Copy static
     if STATIC.exists():
-        for p in STATIC.rglob("*"):
-            rel = p.relative_to(STATIC)
-            dest = DIST / rel
-            if p.is_dir():
-                ensure_dir(dest)
-            else:
-                ensure_dir(dest.parent)
-                shutil.copy2(p, dest)
+        for f in STATIC.glob("*"):
+            shutil.copy2(f, DIST / f.name)
 
     # Search index
     search_index = []
@@ -113,11 +109,19 @@ def build():
         alias = ""
         if e.get("aliases"):
             alias = "<p><strong>別名：</strong> " + ", ".join(escape(a) for a in e["aliases"]) + "</p>"
-
         paras = []
         for p in e.get("content", []):
-            paras.append(f"<p>{linkify(p, title_to_url)}</p>")
-        content_html = "\n".join(paras) if paras else "<p class='muted'>（此詞條尚待補完）</p>"
+            p = (p or "").strip()
+            if not p:
+                continue
+            # If a paragraph starts with '<', treat it as raw HTML block and do NOT escape/linkify.
+            # This enables Wikipedia-like infobox images and other embedded blocks.
+            if p.startswith("<"):
+                paras.append(p)
+            else:
+                paras.append(f"<p>{linkify(p, title_to_url)}</p>")
+        content_html = "
+".join(paras) if paras else "<p class='muted'>（此詞條尚待補完）</p>"
 
         see = ""
         if e.get("see_also"):
