@@ -89,7 +89,7 @@ h1 { margin: 0 0 10px; font-size: 28px; }
 h2 { margin-top: 22px; border-bottom: 1px solid var(--line); padding-bottom: 6px; }
 p { line-height: 1.75; }
 a { color: var(--link); }
-.muted { color: var(--muted); font-size: 12px; }
+.muted { color: var(--muted); font-size: 30px; }
 .footer { margin-top: 14px; }
 
 @media (max-width: 900px) {
