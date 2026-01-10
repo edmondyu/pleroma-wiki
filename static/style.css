@@ -1,10 +1,17 @@
 :root {
-  --bg: #f6f6f6;
-  --panel: #fff;
-  --line: #dcdcdc;
-  --text: #202122;
-  --muted: #54595d;
-  --link: #0645ad;
+  /* Fantasy theme palette */
+  --bg: #0b1020;
+  --bg2: #141b3a;
+  --panel: rgba(255, 255, 255, 0.08);
+  --panel-solid: rgba(255, 255, 255, 0.10);
+  --line: rgba(255, 255, 255, 0.14);
+  --text: rgba(255, 255, 255, 0.92);
+  --muted: rgba(255, 255, 255, 0.70);
+  --link: #b7d2ff;
+  --link-hover: #e8c6ff;
+  --shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
+  --shadow-soft: 0 10px 26px rgba(0, 0, 0, 0.22);
+  --radius: 14px;
 }
 
 * { box-sizing: border-box; }
@@ -116,4 +123,119 @@ a { color: var(--link); }
     width: min(320px, 100%);
     margin: 0 auto 1em;
   }
+}
+/* ============================
+   Fantasy UI enhancements
+   ============================ */
+
+body {
+  background:
+    radial-gradient(1200px 700px at 15% 10%, rgba(140, 120, 255, 0.20), transparent 60%),
+    radial-gradient(900px 600px at 85% 20%, rgba(120, 220, 255, 0.16), transparent 55%),
+    radial-gradient(700px 600px at 50% 95%, rgba(255, 170, 220, 0.12), transparent 55%),
+    linear-gradient(180deg, var(--bg), var(--bg2));
+  font-family: ui-sans-serif, system-ui, -apple-system, "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+}
+
+a { color: var(--link); }
+a:hover { color: var(--link-hover); }
+
+.topbar {
+  background: rgba(20, 26, 54, 0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+  box-shadow: var(--shadow-soft);
+}
+
+.brand a {
+  letter-spacing: 0.4px;
+}
+
+.search {
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid var(--line);
+  color: var(--text);
+  outline: none;
+}
+.search::placeholder { color: rgba(255,255,255,0.55); }
+
+.search-results {
+  background: rgba(20, 26, 54, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+.search-results a { color: var(--text); }
+.search-results a:hover { background: rgba(255,255,255,0.08); }
+
+.sidebar,
+.content .article {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.sidebar h3 {
+  margin-top: 6px;
+  font-size: 14px;
+  letter-spacing: 0.8px;
+  text-transform: none;
+}
+
+.side-item a { text-decoration: none; }
+.side-item a:hover { text-decoration: underline; }
+
+h1 {
+  font-size: 30px;
+  letter-spacing: 0.6px;
+}
+h2 {
+  border-bottom: 1px solid rgba(255,255,255,0.18);
+  padding-bottom: 8px;
+}
+p { line-height: 1.85; }
+
+.muted { color: var(--muted); }
+
+/* Homepage hero image: smaller, prettier, and framed */
+.hero-image {
+  width: 100%;
+  max-width: 920px;
+  max-height: 360px;
+  object-fit: cover;
+  display: block;
+  margin: 10px auto 14px;
+  border-radius: calc(var(--radius) + 6px);
+  border: 1px solid rgba(255,255,255,0.18);
+  box-shadow: var(--shadow);
+}
+
+/* A subtle fantasy “card” feel for lists on home */
+.article ul {
+  padding-left: 18px;
+}
+.article li {
+  margin: 8px 0;
+}
+
+/* Infobox image polish */
+.infobox-image {
+  background: rgba(20, 26, 54, 0.35);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: calc(var(--radius) - 4px);
+  padding: 8px;
+  box-shadow: var(--shadow-soft);
+}
+.infobox-image img { border-radius: calc(var(--radius) - 6px); }
+
+/* Mobile tuning */
+@media (max-width: 900px) {
+  .topbar { gap: 10px; }
+  .content .article { padding: 16px 16px; }
+  .hero-image { max-height: 260px; }
 }
