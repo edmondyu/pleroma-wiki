@@ -294,8 +294,7 @@ def build():
         "<p><img class='hero-image' src='/images/pleroma-wiki.jpg' alt='佩洛瑪舞台：百科 主題圖' /></p>"
         "<p><a href='/categories/'>→ 瀏覽分類</a></p>"
         "<h2>詞條列表</h2>"
-        "<ul>" + "
-".join(home_list) + "</ul>"
+        "<ul>" + "\n".join(home_list) + "</ul>"
     )
     (DIST / "index.html").write_text(
         render_page("佩洛瑪舞台：百科", sidebar_html, categories_sidebar_html, home_body),
