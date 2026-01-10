@@ -56,7 +56,27 @@ def build():
         for c in cats:
             cat_to_titles[c].append(e["title"])
 
-    categories_sorted = sorted(cat_to_titles.keys())
+        # Custom category order (manual priority)
+    CATEGORY_ORDER = [
+        "創作背景",
+        "人物",
+        "團體",
+        "精靈系統",
+        "制度與舞台",
+        "代幣經濟",
+        "地點",
+        "宗教與教派",
+        "時間",
+        "概念",
+        "科技",
+        "組織與勢力",
+        "職業與角色",
+        "能力與技術",
+        "事件",
+    ]
+    order = {name: i for i, name in enumerate(CATEGORY_ORDER)}
+
+    categories_sorted = sorted(cat_to_titles.keys(), key=lambda c: (order.get(c, 999), c))
     for c in categories_sorted:
         cat_to_titles[c] = sorted(cat_to_titles[c])
 
