@@ -248,26 +248,47 @@ def build():
                 f"<p class='muted'>共 {len(cat_to_titles[c])} 條</p>",
             ]
 
-            used = set()
-            for gname, members in idol_groups.items():
-                present = [m for m in members if m in cat_to_titles[c]]
-                if present:
-                    used.update(present)
-                    parts.append(f"<h2>{escape(gname)}</h2>")
-                    parts.append("<ul>" + "\n".join(
-                        f'<li><a href="{title_to_url[t]}">{escape(t)}</a></li>' for t in present
-                    ) + "</ul>")
+            # Explicit importance ordering (author-defined)
+            virgo_order = ["果真希", "桑敏智", "雲碩美", "伊澤愛", "香織善", "海允恕"]
+            virtus_order = ["花愛誠", "摩維仁", "喬吉忠", "安貞勇", "角勝義", "占畢信"]
+            other_order = ["胡亞尼", "國真幾", "胡亞默", "真知子", "零智嚴", "間貫一", "牟兩儀", "郎三才"]
 
-            others = [t for t in cat_to_titles[c] if t not in used]
+            titles = list(cat_to_titles.get(c, []))
+            present = set(titles)
+
+            def li(t: str) -> str:
+                return f'<li><a href="{title_to_url[t]}">{escape(t)}</a></li>'
+
+            used = set()
+
+            # Virgo section
+            virgo = [t for t in virgo_order if t in present]
+            if virgo:
+                used.update(virgo)
+                parts.append("<h2>Virgo</h2>")
+                parts.append("<ul>" + "\\n".join(li(t) for t in virgo) + "</ul>")
+
+            # Virtus section
+            virtus = [t for t in virtus_order if t in present]
+            if virtus:
+                used.update(virtus)
+                parts.append("<h2>Virtus</h2>")
+                parts.append("<ul>" + "\\n".join(li(t) for t in virtus) + "</ul>")
+
+            # Others section: explicit importance order first, then remaining alphabetically
+            others_main = [t for t in other_order if t in present and t not in used]
+            used.update(others_main)
+            others_rest = sorted([t for t in titles if t not in used])
+
+            others = others_main + others_rest
             if others:
                 parts.append("<h2>其他人物</h2>")
-                parts.append("<ul>" + "\n".join(
-                    f'<li><a href="{title_to_url[t]}">{escape(t)}</a></li>' for t in others
-                ) + "</ul>")
+                parts.append("<ul>" + "\\n".join(li(t) for t in others) + "</ul>")
 
-            body = "\n".join(parts)
+            body = "\\n".join(parts)
 
         else:
+
             items = [f'<li><a href="{title_to_url[t]}">{escape(t)}</a></li>' for t in cat_to_titles[c]]
             body = (
                 f"<h1>分類：{escape(c)}</h1>"
