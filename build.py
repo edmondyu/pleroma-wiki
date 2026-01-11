@@ -241,7 +241,6 @@ def build():
     for c in categories_sorted:
         out_dir = cat_root / slugify(c)
         ensure_dir(out_dir)
-
         if c == "人物":
             parts = [
                 f"<h1>分類：{escape(c)}</h1>",
@@ -256,8 +255,9 @@ def build():
             titles = list(cat_to_titles.get(c, []))
             present = set(titles)
 
-            def li(t: str) -> str:
-                return f'<li><a href="{title_to_url[t]}">{escape(t)}</a></li>'
+            # Use <div> rows instead of <ul><li> to avoid bullet points
+            def row(t: str) -> str:
+                return f'<div class="cat-row"><a href="{title_to_url[t]}">{escape(t)}</a></div>'
 
             used = set()
 
@@ -266,14 +266,18 @@ def build():
             if virgo:
                 used.update(virgo)
                 parts.append("<h2>Virgo</h2>")
-                parts.append("<ul>" + "\\n".join(li(t) for t in virgo) + "</ul>")
+                parts.append('<div class="cat-list">')
+                parts.append("\n".join(row(t) for t in virgo))
+                parts.append("</div>")
 
             # Virtus section
             virtus = [t for t in virtus_order if t in present]
             if virtus:
                 used.update(virtus)
                 parts.append("<h2>Virtus</h2>")
-                parts.append("<ul>" + "\\n".join(li(t) for t in virtus) + "</ul>")
+                parts.append('<div class="cat-list">')
+                parts.append("\n".join(row(t) for t in virtus))
+                parts.append("</div>")
 
             # Others section: explicit importance order first, then remaining alphabetically
             others_main = [t for t in other_order if t in present and t not in used]
@@ -283,9 +287,11 @@ def build():
             others = others_main + others_rest
             if others:
                 parts.append("<h2>其他人物</h2>")
-                parts.append("<ul>" + "\\n".join(li(t) for t in others) + "</ul>")
+                parts.append('<div class="cat-list">')
+                parts.append("\n".join(row(t) for t in others))
+                parts.append("</div>")
 
-            body = "\\n".join(parts)
+            body = "\n".join(parts)
 
         else:
 
