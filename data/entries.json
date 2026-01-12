@@ -40,13 +40,10 @@
   {
     "title": "賴晨輝",
     "aliases": [],
-    "summary": "香港小說作家，《SF少女日記》作者。",
+    "summary": "文學少女，新手媽媽。同人誌《愛虛構 Fiction Passion》共同創辦人。",
     "content": [
       "<div class=\"infobox-image\"><img src=\"/images/lai-sen-fai.jpg\" alt=\"賴晨輝\" /><div class=\"infobox-caption\">賴晨輝</div></div>",
-      "賴晨輝為香港小說作家，香港中文大學中文系畢業，育有一女賴真幾。",
-      "其代表作品為《SF少女日記》，另有《SF的奇異日常》及《SF的完美日常》正在《愛虛構 Fiction Passion》連載中。",
-      "在《愛虛構 Fiction Passion》同人誌第一季中，賴晨輝的作者簡介為：代號 Fiction Creator，大學輟學者，無業遊民，世界邊緣人，精神召喚師，神經幻術士，見人所不見，寫人所不寫。",
-      "她於該刊物中的欄目為〈SF 的奇異日常〉，其簡介為：「跨越日常與異常的界線，在精神分解的裂縫中，發現異次元的世界。」"
+      "文學少女，新手媽媽。同人誌《愛虛構 Fiction Passion》共同創辦人，著有長篇連載《SF 少女日記》，撰寫專欄「SF 的完美日常」和「SF 的奇異日常」。外號 Fiction Creator，EverMomento 協作者。堅持每天早上游泳、跑步或帶柴犬散步，日間閱讀和寫作，實踐簡單的完美日常。"
     ],
     "see_also": [
       "SF少女日記",
@@ -58,10 +55,17 @@
   {
     "title": "愛虛構 Fiction Passion",
     "aliases": [],
-    "summary": "《愛虛構 Fiction Passion》是由愛虛構秘密會社出版的同人誌",
+    "summary": "《愛虛構 Fiction Passion》是由愛虛構秘密會社出版的同人誌。",
     "content": [
-      "《愛虛構 Fiction Passion》是由愛虛構秘密會社出版的同人誌，2024 年 8 月 1 日創刊，成員包括吳幸晨（社長）、雷庭音、賴晨輝和胡安妮，內容以虛構故事為主，也有推廣自主出版的文章和日常生活日記。",
-      "同人誌插圖採用日系動漫風格，作者們希望貫徹 2.5 次元的主張，接通虛構和真實，以文字和圖像創造出無限可能的平行世界。",
+      "《愛虛構 Fiction Passion》是由愛虛構秘密會社出版的同人誌，2024 年 8 月 1 日創刊，成員包括吳幸晨（社長）、雷庭音、賴晨輝和胡安妮，內容以虛構故事為主，也有生活隨筆和議論文章。欄目包括：（🌟 新欄目）",
+      "「少女革命 la fillette révolutionnaire 」：既已不是少女，也不打算革命的 web3 行動者筆記，談自主出版，也談動漫文化。",
+      "「拼圖咖啡店 Café Puzzlism」：既非精於咖啡，也非精於拼圖，是一間由人的故事拼湊而成的咖啡店。",
+      "「SF 的奇異日常」：跨越日常與異常的界線，在精神分解的裂縫中，發現異次元的世界。",
+      "「SF 的完美日常」🌟：晨輝的生活隨筆，如金箔的文字，輕逸，靈動，閃閃發光。",
+      "「SF 少女日記」：晨輝的平淡日常，隨意而行，即興而記，在雜亂零碎中，見生命軌跡。（已連載完畢，單行本電子書《SF 少女日記》已經出版 📕，售價 20 USD，按此購買 ，年費訂閱本報免費贈送 🎁）",
+      "「誠與真：佩洛瑪舞台」🌟：建立在區塊鏈上的偶像世界，連結全人類心靈的佩洛瑪舞台，一個關於復仇與和解的故事。",
+      "「故事同好會」🌟：推介精彩作品，讓故事同好者互相分享的地方。",
+      "同人誌的插圖採用日系動漫風格，作者們希望貫徹 2.5 次元的主張，接通虛構和真實，以文字和圖像創造出無限可能的平行世界。",
       "<p>付費訂戶可<a href=\"https://fictionpassion.com/about\">加入愛虛構秘密會社</a>，獲贈多種社員福利。</p>"
     ],
     "see_also": [
@@ -2032,5 +2036,56 @@
       "人工精靈網絡系統"
     ],
     "categories": "精靈系統"
+  },
+  {
+    "title": "胡安妮（作者）",
+    "aliases": [],
+    "summary": "千禧世代新人類，被譽為天才少女，集 I 人與表演者於一身，樂隊 Pleroma 主音結他手，愛好繪圖、busking 和 cosplay。",
+    "content": [
+      "<div class=\"infobox-image\"><img src=\"/images/wuani-2d.jpeg\" alt=\"胡安妮（作者）\" /><div class=\"infobox-caption\">胡安妮（作者）</div></div>",
+      "千禧世代新人類，被譽為天才少女，集 I 人與表演者於一身，樂隊 Pleroma 主音結他手，愛好繪圖、busking 和 cosplay。外號 Fiction Generator，寫作機器，又稱 Ghost Writer，靈魂寫手。"
+    ],
+    "see_also": [
+      "愛虛構 Fiction Passion"
+    ],
+    "categories": "創作背景"
+  },
+  {
+    "title": "雷庭音",
+    "aliases": [],
+    "summary": "中文系出身，眾人學姐。",
+    "content": [
+      "<div class=\"infobox-image\"><img src=\"/images/lui-ting-yam.jpeg\" alt=\"雷庭音\" /><div class=\"infobox-caption\">雷庭音</div></div>",
+      "中文系出身，眾人學姐。同人誌《愛虛構 Fiction Passion》同共創辦人，撰寫連載專欄「拼圖咖啡店」。外號 Fiction Apprentice，永續學習年代／工作假期人士，後升任咖啡店店長，從旁觀察世情，書寫人間故事。"
+    ],
+    "see_also": [
+      "愛虛構 Fiction Passion"
+    ],
+    "categories": "創作背景"
+  },
+  {
+    "title": "吳幸晨",
+    "aliases": [],
+    "summary": "前小網紅，失業數學補習天后，準中女。",
+    "content": [
+      "<div class=\"infobox-image\"><img src=\"/images/ng-heng-sun.jpeg\" alt=\"吳幸晨\" /><div class=\"infobox-caption\">吳幸晨</div></div>",
+      "前小網紅，失業數學補習天后，準中女。愛虛構秘密會社社長，同人誌《愛虛構 Fiction Passion》共同創辦人及主編，撰寫連載專欄「少女革命」。外號 Fiction Lover，日系動漫迷，AI 製圖成癮者，數位遊民，web3 工作者，分散式出版人，擁抱去心中、自主和共享精神。"
+    ],
+    "see_also": [
+      "愛虛構 Fiction Passion"
+    ],
+    "categories": "創作背景"
+  },
+  {
+    "title": "蔓",
+    "aliases": [],
+    "summary": "創作背景人物條目。",
+    "content": [
+      "<div class=\"infobox-image\"><img src=\"/images/mann.jpeg\" alt=\"蔓\" /><div class=\"infobox-caption\">蔓</div></div>"
+    ],
+    "see_also": [
+      "愛虛構 Fiction Passion"
+    ],
+    "categories": "創作背景"
   }
 ]
